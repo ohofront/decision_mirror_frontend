@@ -26,8 +26,8 @@ npm run build
 
 ## Netlify 배포
 
-Git 저장소를 Netlify에 연결해 배포하세요. 저장소 루트의 `netlify.toml`이 빌드 명령을 `npm run build`, 게시 디렉터리를 `.next`로 설정합니다. Next.js API 경로를 사용하므로 폴더를 끌어다 놓는 수동 정적 배포 방식은 사용할 수 없습니다.
+Git 저장소를 Netlify에 연결해 배포하세요. 저장소 루트의 `netlify.toml`이 빌드 명령을 `npm run build`, 게시 디렉터리를 `.next`로 설정하고 Next.js 어댑터를 실행합니다. Next.js API 경로를 사용하므로 폴더를 끌어다 놓는 수동 정적 배포 방식은 사용할 수 없습니다.
 
-Netlify의 **Site configuration → Build & deploy**에서 Base directory가 저장소 루트인지 확인하세요. 기존에 `dist`, `build`, `out` 또는 `public`으로 설정한 Publish directory가 있다면 `.next`로 변경하고 새 배포를 실행하세요. 배포 로그에서 Next.js/OpenNext 어댑터가 실행됐는지 확인할 수 있습니다.
+Netlify의 **Site configuration → Build & deploy**에서 Base directory가 저장소 루트인지 확인하세요. 기존에 `dist`, `build`, `out` 또는 `public`으로 설정한 Publish directory가 있다면 `.next`로 변경하고 새 배포를 실행하세요. 배포 요약에 Netlify Functions가 생성되고 `/`, `/analyze`, `/result`, `/api/analyze` 경로가 동작해야 합니다.
 
 실제 AI 분석은 Netlify 환경변수에 `AI_PROVIDER`, 해당 제공자의 API 키, `NEXT_PUBLIC_DEMO_MODE=false`를 설정해야 합니다. 키가 없으면 데모 응답을 반환합니다.
